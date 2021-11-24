@@ -4,5 +4,7 @@
 
 #page {
   height: 100%;
-  background: black;
+  background-image: url(https://raw.githubusercontent.com/KevinHJo/aqua-log/main/frontend/public/assets/images/underwater.jpg);
+  background-repeat: no-repeat;
+  background-size: 200vh;
 }
