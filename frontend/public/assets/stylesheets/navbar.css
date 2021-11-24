@@ -1,0 +1,21 @@
+#navbar {
+  height: 50px;
+  background: rgb(67, 67, 165);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#nav-links {
+  display: flex;
+  padding-right: 25px;
+}
+
+#nav-links a {
+  padding: 10px;
+  color: white;
+}
+
+#nav-links a:hover {
+  background:rgb(49, 49, 122)
+}
