@@ -6,7 +6,6 @@ class LoginForm extends React.Component {
     super(props);
 
     this.state = {
-      username: '',
       email: '',
       password: '',
       errors: {}
@@ -45,10 +44,10 @@ class LoginForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul id='session-errors'>
         {Object.keys(this.props.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.props.errors[error]}
+          <li key={`error-${i}`} className='session-error'>
+            {`${this.props.errors[error]}`}
           </li>
         ))}
       </ul>
@@ -63,16 +62,6 @@ class LoginForm extends React.Component {
           <h1>Login</h1>
 
           {this.renderErrors()}
-          
-          <div className='form-input'>
-            <label htmlFor='username'>Username: </label>
-            <input type="text"
-              name='username'
-              value={this.state.username}
-              onChange={this.update('username')}
-              placeholder="Username"
-            /> 
-          </div>
           
           <div className='form-input'>
             <label htmlFor='email'>Email: </label>
