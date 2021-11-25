@@ -17,6 +17,10 @@ class SignupForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
+  componentDidMount() {
+    this.props.removeErrors();
+  }
+
   componentDidUpdate(nextProps) {
     if (nextProps.signedIn === true) {
       this.props.history.push('/login');
@@ -41,18 +45,21 @@ class SignupForm extends React.Component {
 
       this.props.signup(user, this.props.history);
     } else {
-      debugger
-      this.setState({errors: 'somethin'})
+      // let errors = {...this.state.errors};
+      // errors.passwordMatch = 'Passwords don\'t match'
+      // this.setState({errors: errors})
+      this.props.receiveErrors({password: 'Passwords don\'t match'})
     }
     
   }
 
   renderErrors() {
+    
     return (
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
+      <ul id='session-errors'>
+        {Object.keys(this.props.errors).map((error, i) => (
+          <li key={`error-${i}`} id='session-error'>
+            {`${this.props.errors[error]}`}
           </li>
         ))}
       </ul>
@@ -61,34 +68,54 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} id='session-form'>
-        {this.renderErrors()}
-        <input type="text"
-          value={this.state.username}
-          onChange={this.update('username')}
-          placeholder="Username"
-        />
+      <div id='signup-page'>
+        <img src="https://raw.githubusercontent.com/KevinHJo/aqua-log/main/frontend/public/assets/images/q-u-i-0G01UI1MQhg-unsplash.jpg" alt="" />
+        <form onSubmit={this.handleSubmit} id='session-form'>
+          <h1>Signup</h1>
 
-        <input type="text"
-          value={this.state.email}
-          onChange={this.update('email')}
-          placeholder="Email"
-        />
+          {this.renderErrors()}
 
-        <input type="password"
-          value={this.state.password}
-          onChange={this.update('password')}
-          placeholder="Password"
-        />
-        
-        <input type="password"
-          value={this.state.password2}
-          onChange={this.update('password2')}
-          placeholder="Confirm Password"
-        />
+          <div className='form-input'>
+            <label htmlFor='username'>Username: </label>
+            <input type="text"
+              name='username'
+              value={this.state.username}
+              onChange={this.update('username')}
+              placeholder="Username"
+            />
+          </div>
 
-        <input type="submit" value="Signup"/>
-      </form>
+          <div className='form-input'>
+            <label htmlFor="email">Email: </label>
+            <input type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
+              placeholder="Email"
+            />
+          </div>
+            
+          <div className='form-input'>
+            <label htmlFor="password">Password: </label>
+            <input type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              placeholder="Password"
+            />
+          </div>
+          
+          <div className='form-input'>
+            <label htmlFor="password2">Confirm Password: </label>
+            <input type="password"
+              value={this.state.password2}
+              onChange={this.update('password2')}
+              placeholder="Confirm Password"
+            />
+          </div>
+
+          <input id='session-form-submit' type="submit" value="Signup"/>
+        </form>
+      </div>
+      
     );
   }
 }

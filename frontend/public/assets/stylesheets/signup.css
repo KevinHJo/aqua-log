@@ -1,0 +1,10 @@
+#signup-page {
+  display: flex;
+  height: 1220px;
+}
+
+#signup-page img {
+  width: 1792px;
+  height: 100%;
+  border-right: 15px solid black;
+}
