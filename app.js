@@ -8,7 +8,15 @@ const passport = require('passport');
 const users = require("./routes/api/users");
 const tanks = require("./routes/api/tanks");
 const logs = require("./routes/api/logs");
+const path = require('path');
 // -->*
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
 
 app.use(passport.initialize());
 require('./config/passport')(passport);
