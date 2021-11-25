@@ -3,9 +3,15 @@
 }
 
 #page {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; */
   height: 100%;
-  /* background-image: url(https://raw.githubusercontent.com/KevinHJo/aqua-log/main/frontend/public/assets/images/cristian-palmer-XexawgzYOBc-unsplash.jpg);
+  /* background-image: url(https://raw.githubusercontent.com/KevinHJo/aqua-log/main/frontend/public/assets/images/sebastian-pena-lambarri-poly_hmhwJs-unsplash.jpg);
   background-repeat: no-repeat;
-  background-size: 220vh; */
-  background: rgb(211, 196, 255);
+  background-size: 210vh; */
+}
+
+.nav-fix {
+  height: 50px;
 }

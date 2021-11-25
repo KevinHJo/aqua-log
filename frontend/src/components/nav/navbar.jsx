@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
   }
@@ -26,7 +27,7 @@ class NavBar extends React.Component {
       return (
         <div id='nav-links'>
           <Link to={'/login'}>LOGIN</Link>
-          <Link to={'/signup'}>SINGUP</Link>
+          <Link to={'/signup'}>SIGNUP</Link>
         </div>
       );
     }
@@ -35,9 +36,11 @@ class NavBar extends React.Component {
   render() {
     return (
       <div id='navbar'>
-        <div id='nav-icon'>
-          <img src="" alt="" />
-        </div>
+        <Link id='nav-icon' to={'/'}>
+          <h2>AquaLog</h2>
+          <img src="https://raw.githubusercontent.com/KevinHJo/aqua-log/main/frontend/public/assets/images/clownfish.png" alt=''/>
+        </Link>
+        
         { this.getLinks() }
       </div>
     );

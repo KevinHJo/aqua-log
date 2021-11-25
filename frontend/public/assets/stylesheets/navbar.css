@@ -1,9 +1,32 @@
 #navbar {
+  position: fixed;
+  width: 100vw;
   height: 50px;
-  background: rgb(67, 67, 165);
+  background: rgb(52, 96, 133);
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+#nav-icon {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  color: white;
+}
+
+#nav-icon img {
+  height: 30px;
+  margin-left: 10px;
+}
+
+#nav-icon:hover {
+  cursor: pointer;
+  background-color: rgb(44, 83, 114);
+}
+
+#nav-icon:active {
+  background-color: rgb(33, 64, 88);
 }
 
 #nav-links {
@@ -17,5 +40,5 @@
 }
 
 #nav-links a:hover {
-  background:rgb(49, 49, 122)
+  background:rgb(44, 83, 114);
 }

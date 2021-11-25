@@ -53,43 +53,47 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} id='session-form'>
-        <h1>Login</h1>
+      <div id='login-page'>
+        <img src="https://raw.githubusercontent.com/KevinHJo/aqua-log/main/frontend/public/assets/images/sebastian-pena-lambarri-poly_hmhwJs-unsplash.jpg" alt="" />
+        <form onSubmit={this.handleSubmit} id='session-form'>
+          <h1>Login</h1>
 
-        {this.renderErrors()}
-        
-        <div className='form-input'>
-          <label htmlFor='username'>Username: </label>
-          <input type="text"
-            name='username'
-            value={this.state.username}
-            onChange={this.update('username')}
-            placeholder="Username"
-          /> 
-        </div>
-        
-        <div className='form-input'>
-          <label htmlFor='email'>Email: </label>
-          <input type="text"
-            name='email'
-            value={this.state.email}
-            onChange={this.update('email')}
-            placeholder="Email"
-          />
-        </div>
+          {this.renderErrors()}
+          
+          <div className='form-input'>
+            <label htmlFor='username'>Username: </label>
+            <input type="text"
+              name='username'
+              value={this.state.username}
+              onChange={this.update('username')}
+              placeholder="Username"
+            /> 
+          </div>
+          
+          <div className='form-input'>
+            <label htmlFor='email'>Email: </label>
+            <input type="text"
+              name='email'
+              value={this.state.email}
+              onChange={this.update('email')}
+              placeholder="Email"
+            />
+          </div>
 
-        <div className='form-input'>
-          <label htmlFor='password'>Password: </label>
-          <input type="password"
-            name='password'
-            value={this.state.password}
-            onChange={this.update('password')}
-            placeholder="Password"
-          />
-        </div>
+          <div className='form-input'>
+            <label htmlFor='password'>Password: </label>
+            <input type="password"
+              name='password'
+              value={this.state.password}
+              onChange={this.update('password')}
+              placeholder="Password"
+            />
+          </div>
 
-        <input id='session-form-submit' type="submit" value="Login"/>
-      </form>
+          <input id='session-form-submit' type="submit" value="Login"/>
+        </form>
+      </div>
+      
     );
   }
 }
