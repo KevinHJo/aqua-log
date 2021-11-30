@@ -10,7 +10,6 @@ class HomePage extends React.Component {
   }
   
   render() {
-    console.log(this.props.history);
     return (
       <div id='home-page'>
         <h1>Welcome {this.props.currentUser.username}!</h1>

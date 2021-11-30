@@ -42,3 +42,20 @@
 #nav-links a:hover {
   background:rgb(44, 83, 114);
 }
+
+#nav-links button {
+  color: white;
+  border: none;
+  background: rgb(52, 96, 133);
+
+}
+
+#nav-links button:hover {
+  cursor: pointer;
+  background: rgb(44, 83, 114);
+}
+
+#nav-links button:active {
+  cursor: pointer;
+  background: rgb(33, 64, 88);
+}

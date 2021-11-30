@@ -1,0 +1,27 @@
+#home-page {
+  height: 96%;
+  width: 75%;
+  margin: auto;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.home-tank-list {
+  padding: 0px;
+}
+
+.home-tank-list-item {
+  width: 100px;
+  padding: 10px 10px;
+  text-align: center;
+  list-style: none;
+}
+
+.home-tank-list-item:hover {
+  cursor: pointer;
+  background: rgb(230, 230, 230);
+}
