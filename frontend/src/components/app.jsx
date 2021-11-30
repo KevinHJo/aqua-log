@@ -2,11 +2,13 @@ import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 
-import HomePage from './home/home_page';
+import HomePageContainer from './home/home_page_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import NavBarContainer from './nav/navbar_container';
 import Splash from './splash'
+import TankShowContainer from './tank/tank_show_container';
+import LogShowContainer from './log/log_show_container';
 
 const App = () => (
   <div id='page'>
@@ -14,7 +16,9 @@ const App = () => (
     <div className='nav-fix' />
     <Switch>
       <AuthRoute exact path='/' component={Splash} />
-      <ProtectedRoute exact path="/home" component={HomePage} />
+      <ProtectedRoute exact path="/home" component={HomePageContainer} />
+      <ProtectedRoute exact path="/tanks/:tankId" component={TankShowContainer} />
+      <ProtectedRoute exact path="/logs/:logId" component={LogShowContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>

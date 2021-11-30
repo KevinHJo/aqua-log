@@ -11,6 +11,12 @@ router.get('/user/:user_id', (req, res) => {
     .catch(err => res.status(404).json({nologsfound: "No logs found"}));
 });
 
+router.get('/tank/:tank_id', (req, res) => {
+  Log.find({tank: req.params.tank_id})
+    .then(logs => res.json(logs))
+    .catch(err => res.status(404).json({nologsfound: "No logs found"}));
+})
+
 router.get('/:id', (req, res) => {
   Log.findById(req.params.id)
     .then(log => res.json(log))

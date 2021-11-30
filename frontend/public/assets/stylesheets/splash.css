@@ -3,6 +3,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  border: 10px solid black;
   height: 750px;
   color: white;
   display: flex;
