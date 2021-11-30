@@ -12,9 +12,10 @@ class HomePage extends React.Component {
   render() {
     return (
       <div id='home-page'>
-        <h1>Welcome {this.props.currentUser.username}!</h1>
-        <h2>Your Tanks</h2>
+        <h1 id='home-page-header'>Welcome {this.props.currentUser.username}!</h1>
+        
         <ul className='home-tank-list'>
+          <h2>Your Tanks:</h2>
           {this.props.userTanks.map( tank => {
             return <li key={`tank-${tank._id}`} className='home-tank-list-item' onClick={() => this.sendToTank(tank._id)}>{tank.name}</li>
           })}

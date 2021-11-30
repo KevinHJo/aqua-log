@@ -34,12 +34,13 @@ class TankShow extends React.Component {
       }
 
       return (
-        <div>
-          <h1>{this.props.tank.name}</h1>
-          <ul>
+        <div id='tank-show-page'>
+          <h1 id='tank-show-name'>{this.props.tank.name}</h1>
+          <ul id='tank-log-list'>
+            <h2>Logs</h2>
             {this.props.logs.map( log => {
               return (
-                <li key={`log-${log._id}`} className='home-log-list-item' onClick={() => this.sendToLog(log._id)}>
+                <li key={`log-${log._id}`} className='tank-log-list-item' onClick={() => this.sendToLog(log._id)}>
                   <p>{new Date(log.date).toLocaleDateString(undefined, dateOptions)} - {new Date(log.date).toLocaleTimeString([], timeOptions)}</p>
                 </li>
               )
