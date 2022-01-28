@@ -39,7 +39,7 @@ class HomePage extends React.Component {
     })
   }
 
-  renderCreateTank() {
+  renderCreateTankForm() {
     // debugger
     if (this.state.modal) {
       return (
@@ -66,7 +66,7 @@ class HomePage extends React.Component {
       <div id='home-page'>
         <h1 id='home-page-header'>Welcome {this.props.currentUser.username}!</h1>
         
-        {this.renderCreateTank()}
+        {this.renderCreateTankForm()}
 
         <ul className='home-tank-list'>
           <h2>Your Tanks:</h2>
