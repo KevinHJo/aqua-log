@@ -25,16 +25,8 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   const newLog = new Log({
-    ammonia: req.body.ammonia,
-    nitrite: req.body.nitrite,
-    nitrate: req.body.nitrate,
-    temperature: req.body.temperature,
-    pH: req.body.pH,
-    salinity: req.body.salinity,
-    calcium: req.body.calcium,
-    alkalinity: req.body.alkalinity,
-    magnesium: req.body.magnesium,
-    phosphate: req.body.phosphate,
+    logType: req.body.logType,
+    value: req.body.value,
     tank: req.body.tank,
     user: req.body.user,
     date: new Date(req.body.date)

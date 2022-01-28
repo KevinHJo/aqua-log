@@ -1,4 +1,4 @@
-import { fetchUserTanks } from "../../actions/tank_actions";
+import { fetchUserTanks, createTank } from "../../actions/tank_actions";
 import { connect } from 'react-redux';
 import HomePage from './home_page';
 
@@ -11,7 +11,8 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
   return {
-    fetchUserTanks: userId => dispatch(fetchUserTanks(userId))
+    fetchUserTanks: userId => dispatch(fetchUserTanks(userId)),
+    createTank: tank => dispatch(createTank(tank))
   }
 }
 

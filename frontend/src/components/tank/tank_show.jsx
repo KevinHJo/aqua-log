@@ -4,6 +4,10 @@ class TankShow extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      
+    }
+
     this.renderTank = this.renderTank.bind(this);
     this.sendToLog = this.sendToLog.bind(this);
   }
