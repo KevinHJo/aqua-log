@@ -3,7 +3,7 @@ import LogShow from './log_show';
 
 const mSTP = (state, ownProps) => {
   return {
-    
+    currentUser: state.session.user
   }
 }
 

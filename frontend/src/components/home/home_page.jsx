@@ -27,16 +27,31 @@ class HomePage extends React.Component {
     this.setState({modal: !this.state.modal});
   }
 
-  handleSubmit() {
-    
+  updateName(e) {
+    this.setState({name: e.currentTarget.value})
   }
 
-  renderCreateTank() {
+  handleSubmit() {
+    this.props.createTank(this.state)
+    this.setState({
+      name: '',
+      modal: false
+    })
+  }
+
+  renderCreateTankForm() {
+    // debugger
     if (this.state.modal) {
       return (
-        <div>
+        <div id='create-tank-form'>
           <form onSubmit={this.handleSubmit}>
-
+            <label htmlFor='name'>Name: </label>
+              <input type="text"
+                name='name'
+                value={this.state.name}
+                onChange={this.updateName.bind(this)}
+                placeholder='Input Tank Name Here'
+              />
           </form>
         </div>
         
@@ -51,6 +66,8 @@ class HomePage extends React.Component {
       <div id='home-page'>
         <h1 id='home-page-header'>Welcome {this.props.currentUser.username}!</h1>
         
+        {this.renderCreateTankForm()}
+
         <ul className='home-tank-list'>
           <h2>Your Tanks:</h2>
           {this.props.userTanks.map( tank => {

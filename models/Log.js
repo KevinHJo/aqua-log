@@ -2,45 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const LogSchema = new Schema({
-  ammonia: {
-    type: Schema.Types.Decimal128,
-    required: false
+  logType: {
+    type: String,
+    required: true
   },
-  nitrite: {
+  value: {
     type: Schema.Types.Decimal128,
-    required: false
-  },
-  nitrate: {
-    type: Schema.Types.Decimal128,
-    required: false
-  },
-  temperature: {
-    type: Schema.Types.Decimal128,
-    required: false
-  },
-  pH: {
-    type: Schema.Types.Decimal128,
-    required: false
-  },
-  salinity: {
-    type: Schema.Types.Decimal128,
-    required: false
-  },
-  calcium: {
-    type: Schema.Types.Decimal128,
-    required: false
-  },
-  alkalinity: {
-    type: Schema.Types.Decimal128,
-    required: false
-  },
-  magnesium: {
-    type: Schema.Types.Decimal128,
-    required: false
-  },
-  phosphate: {
-    type: Schema.Types.Decimal128,
-    required: false
+    required: true
   },
   tank: {
     type: Schema.Types.ObjectId,
