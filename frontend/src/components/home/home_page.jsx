@@ -23,8 +23,12 @@ class HomePage extends React.Component {
     this.props.history.push(`/tanks/${tankId}`);
   }
 
-  toggleCreateTank() {
+  toggleCreateTank(e) {
     this.setState({modal: !this.state.modal});
+  }
+
+  ensureOpenModal(e) {
+    e.stopPropagation();
   }
 
   updateName(e) {
@@ -43,15 +47,20 @@ class HomePage extends React.Component {
     // debugger
     if (this.state.modal) {
       return (
-        <div id='create-tank-form'>
-          <form onSubmit={this.handleSubmit}>
-            <label htmlFor='name'>Name: </label>
+        <div id='create-tank-form-container' onClick={this.toggleCreateTank}>
+          <form id='create-tank-form' onSubmit={this.handleSubmit} onClick={this.ensureOpenModal}>
+            <h2>Make a Tank!</h2>
+            <div id='create-tank-name'>
+              <label htmlFor='name'>Name: </label>
               <input type="text"
                 name='name'
                 value={this.state.name}
                 onChange={this.updateName.bind(this)}
                 placeholder='Input Tank Name Here'
               />
+            </div>
+
+            <input id='create-tank-submit' type="submit" value='Create New Tank'/>
           </form>
         </div>
         
